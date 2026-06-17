@@ -1,0 +1,135 @@
+/* Контейнер для кнопок фільтрації */
+.filter-buttons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.filter-buttons button {
+    padding: 10px 20px;
+    border: 2px solid #34495e;
+    background-color: transparent;
+    color: #34495e;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.filter-buttons button.active, .filter-buttons button:hover {
+    background-color: #34495e;
+    color: white;
+}
+
+/* Красива сітка для карток товарів */
+.inventory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+/* Сама картка інвентарю */
+.inventory-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.inventory-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Контейнер для картинки (з фіксованою висотою) */
+.card-img-container {
+    height: 200px;
+    background-color: #f8f9fa;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-img-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Картинка не буде обрізатися чи сплющуватися */
+}
+
+.status-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #f1c40f;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Інформація під картинкою */
+.card-info {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-info h3 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    color: #2c3e50;
+}
+
+.card-info .serial {
+    color: #7f8c8d;
+    font-size: 14px;
+    margin: 0 0 10px 0;
+}
+
+.card-info .price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #27ae60;
+    margin: auto 0 15px 0; /* Притискає ціну до низу */
+}
+
+.issue-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.issue-btn:hover {
+    background-color: #e67e22;
+}
+
+.custom-calendar-icon::-webkit-calendar-picker-indicator,
+.custom-clock-icon::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+/* Анімація виїзду кошика справа */
+.slide-in-right {
+    animation: slideInRight 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}

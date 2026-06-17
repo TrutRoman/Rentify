@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "RentifyBackendApplication",
+            "request": "launch",
+            "mainClass": "com.rentify.RentifyBackendApplication",
+            "projectName": "rentify-backend"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-RentifyBackendApplication<rentify-backend>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.rentify.rentify_backend.RentifyBackendApplication",
+            "projectName": "rentify-backend",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
