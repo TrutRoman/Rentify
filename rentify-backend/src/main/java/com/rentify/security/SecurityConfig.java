@@ -17,13 +17,14 @@ public class SecurityConfig {
                         .cors(Customizer.withDefaults()) 
             .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/api/auth/**").permitAll()
+                .requestMatchers("/api/auth/**").permitAll() // Це в тебе вже має бути
                 .requestMatchers("/api/inventory/**").permitAll()
                 .requestMatchers("/api/notifications/**").permitAll()
                 .requestMatchers("/api/users/**").permitAll()
                 .requestMatchers("/ws/**").permitAll()
                 .requestMatchers("/api/orders/**").permitAll()
-                
+                .requestMatchers("/api/maintenance/**").permitAll()
+                .requestMatchers("/api/finance/**").permitAll()
                 .anyRequest().authenticated()
             );
         

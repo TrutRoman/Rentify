@@ -28,9 +28,11 @@ public class MaintenanceLogController {
     @Autowired
     private InventoryRepository inventoryRepository;
 
-    // ОНОВЛЕНО: Тепер приймаємо description через @RequestParam
     @PostMapping("/create")
-    public MaintenanceLog createLog(@RequestParam Long itemId, @RequestParam String description) {
+    public MaintenanceLog createLog(
+            @RequestParam Long itemId,
+            @RequestParam(required = false, defaultValue = "Плановий технічний огляд") String description) {
+        
         InventoryItem item = inventoryRepository.findById(itemId)
                 .orElseThrow(() -> new RuntimeException("Предмет не знайдено"));
         
@@ -40,7 +42,8 @@ public class MaintenanceLogController {
         MaintenanceLog log = new MaintenanceLog();
         log.setInventoryItem(item);
         log.setIssueDescription(description);
-        log.setTechId(6L); 
+        
+        log.setTechId(6L); // Припустимо, що технік з ID 6 існує в базі даних
         
         return maintenanceLogRepository.save(log);
     }
